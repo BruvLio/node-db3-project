@@ -1,4 +1,6 @@
-function find() {
+const db = require("../../data/db-config");
+
+async function find() {
   // EXERCISE A
   /*
     1A- Study the SQL query below running it in SQLite Studio against `data/schemes.db3`.
@@ -16,6 +18,12 @@ function find() {
     2A- When you have a grasp on the query go ahead and build it in Knex.
     Return from this function the resulting dataset.
   */
+  const schemes = await db("schemes as sc")
+    .leftJoin("steps as st")
+    .groupBy()
+    .select()
+    .count();
+  return schemes;
 }
 
 function findById(scheme_id) {
