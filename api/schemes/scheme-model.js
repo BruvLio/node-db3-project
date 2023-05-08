@@ -154,6 +154,11 @@ function add(scheme) {
   /*
     1D- This function creates a new scheme and resolves to _the newly created scheme_.
   */
+  return db("schemes")
+    .insert(scheme)
+    .then(([scheme_id]) => {
+      return db("scheme").where("scheme_id", scheme_id).first();
+    });
 }
 
 function addStep(scheme_id, step) {
