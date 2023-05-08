@@ -28,11 +28,11 @@ const router = express.Router();
   ]
  */
 router.get("/", (req, res, next) => {
-  Schemes.find();
-  // .then(schemes => {
-  //   res.json(schemes)
-  // })
-  // .catch(next)
+  Schemes.find()
+    .then((schemes) => {
+      res.json(schemes);
+    })
+    .catch(next);
 });
 
 /*
