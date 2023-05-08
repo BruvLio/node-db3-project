@@ -16,8 +16,6 @@ function find() {
     2A- When you have a grasp on the query go ahead and build it in Knex.
     Return from this function the resulting dataset.
   */
-
-  console.log("i'm here");
 }
 
 function findById(scheme_id) {
