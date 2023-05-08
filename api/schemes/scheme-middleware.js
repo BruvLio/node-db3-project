@@ -13,11 +13,10 @@ const checkSchemeId = async (req, res, next) => {
     const existing = await db("schemes")
       .where("scheme_id", req.params.scheme_id)
       .first();
-
     if (!existing) {
       next({
         status: 404,
-        message: `scheme with ${req.params.scheme_id} not found`,
+        message: `scheme with scheme_id ${req.params.scheme_id} not found`,
       });
     } else {
       next();
