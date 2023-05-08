@@ -36,7 +36,6 @@ const steps = [
   { scheme_id: 6, step_number: 3, instructions: "artfully craft accessories" },
   { scheme_id: 6, step_number: 1, instructions: "steal coworker's name tag" },
   { scheme_id: 6, step_number: 2, instructions: "procure facial hair" },
-  { scheme_id: 6, step_number: 2, instructions: "Testing" },
 ];
 
 exports.steps = steps;
