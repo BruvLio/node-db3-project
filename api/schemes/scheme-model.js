@@ -18,13 +18,13 @@ async function find() {
     2A- When you have a grasp on the query go ahead and build it in Knex.
     Return from this function the resulting dataset.
   */
-  const schemes = await db("schemes as sc")
-    .leftJoin("steps as st", "sc.shceme_id", "st.scheme_id")
-    .groupBy("sc.schema_id")
-    .select("sc.*")
-    .count("st.shceme_id")
-    .groupBy("sc.shceme_id");
-  return schemes;
+  // const schemes = await db("schemes as sc")
+  //   .leftJoin("steps as st", "sc.shceme_id", "st.scheme_id")
+  //   .groupBy("sc.schema_id")
+  //   .select("sc.*")
+  //   .count("st.shceme_id")
+  //   .groupBy("sc.shceme_id");
+  // return schemes;
 }
 
 function findById(scheme_id) {
