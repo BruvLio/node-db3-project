@@ -19,10 +19,11 @@ async function find() {
     Return from this function the resulting dataset.
   */
   const schemes = await db("schemes as sc")
-    .leftJoin("steps as st", "", "")
+    .leftJoin("steps as st", "sc.shceme_id", "st.scheme_id")
     .groupBy("sc.schema_id")
     .select("sc.*")
-    .count("");
+    .count("st.shceme_id")
+    .groupBy("sc.shceme_id");
   return schemes;
 }
 
