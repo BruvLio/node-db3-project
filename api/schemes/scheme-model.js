@@ -100,7 +100,7 @@ async function findById(scheme_id) {
 
   const result = {
     scheme_id: rows[0].scheme_id,
-    sheme_name: rows[0].scheme_name,
+    scheme_name: rows[0].scheme_name,
     steps: [],
   };
   rows.forEach((row) => {
@@ -157,7 +157,7 @@ function add(scheme) {
   return db("schemes")
     .insert(scheme)
     .then(([scheme_id]) => {
-      return db("scheme").where("scheme_id", scheme_id).first();
+      return db("schemes").where("scheme_id", scheme_id).first();
     });
 }
 
@@ -178,7 +178,7 @@ function addStep(scheme_id, step) {
         .join("schemes as sc", "sc.scheme_id", "st.scheme_id")
         .select("step_id", "step_number", "instructions", "scheme_name")
         .orderBy("step_number")
-        .where(".sc.scheme_id", scheme_id);
+        .where("sc.scheme_id", scheme_id);
     });
 }
 
